@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+
+float f1(float);
+float f2(float);
+float process(float,float);
+float E,it;
+ int main()
+ {
+ 	float a,b,i;
+ 	//float f1,f2;
+ 	float r1,r2,r3,r4;
+ 	
+ 	printf("Enter value of a , b and error and iteration\n");
+ 	scanf("%f %f %f %f",&a,&b,&E,&it);
+ 	
+	 
+ 	r1=f1(a);
+ 	r2=f2(b);
+ 	for(int i=0;i<it;i++)
+ 	{
+ 	r3=process(a,b);
+ //	E=r2-r1;
+ 	if(r1*r2>0)
+ 	{
+ 		b=r3;
+	 }
+	 else if(r1*r2<0)
+	 {
+	 	a=r3;
+	 }
+	 else{
+	 	printf("%f is answer ",r3);
+	 }
+	 r4=process(a,b);
+	 r4=r3;
+ 	
+	 printf("x = %f\n",r3);
+	  }
+ 	
+ 	printf("f(a) = %f\n",r1);
+ 	printf("f(b) = %f\n",r2);
+ 
+ 
+ 
+ while(r3!=E)
+ {
+ 
+ 	
+ }
+  return 0;
+ }
+ float process(float m,float n)
+ {
+     float x1;
+     x1=(m+n)/2;
+     
+	 return x1;
+  }
+ float f1(float x)
+ {
+ 	return (x*x*x)-(3*x);
+ }
+ float f2(float y)
+ {
+ 	return (y*y*y)-(3*y);
+ }
